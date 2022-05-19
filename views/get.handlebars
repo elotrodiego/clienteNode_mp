@@ -1,0 +1,8 @@
+<h2>Listado del correo electrónico de usuarios </h2>
+{{#if usuario}}
+  <ul>
+    {{#each usuario}}
+      <li>{{this.idUser}} | {{this.nombre}} {{this.apellido}} | ({{this.email}})</li>
+    {{/each}}
+  </ul>
+{{/if}}
