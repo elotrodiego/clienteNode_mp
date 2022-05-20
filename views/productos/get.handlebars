@@ -1,0 +1,10 @@
+<h2>Listado de Productos </h2>
+{{#if producto}}
+  <ul>
+    {{#each producto}}
+      <li>{{this.id}} | {{this.nombre}} {{this.codigo}} | (${{this.valor}})
+        <img class="img-fluid" src={{ this.foto }} alt="gc2">
+      </li>
+    {{/each}}
+  </ul>
+{{/if}}

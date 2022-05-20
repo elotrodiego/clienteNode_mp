@@ -17,7 +17,7 @@ const usuario = (req, res) => {
       const usuario = response;
      
       res.render("get",{ 
-          layout:"main",
+          layout:"usuarios",
           usuario:usuario['data']
       });
 
@@ -40,7 +40,7 @@ const usuario = (req, res) => {
   const vistaAgregaUsuario = (req, res) => {
 
     res.render("post",{ 
-        layout:"main",     
+        layout:"usuarios",     
     });
 
   }
@@ -53,7 +53,6 @@ const agregaUsuario = (req, res) => {
     let apellido= req.body.apellido;
     let rut= req.body.rut;
     let tipoPermiso= req.body.tipoPermiso;
-    let id= req.body.id;
     let contrasena= req.body.contrasena;
 
 
@@ -72,7 +71,7 @@ const agregaUsuario = (req, res) => {
       const mensaje = response;
       console.log(usuario['data']);
       res.render("post",{ 
-          layout:"main",
+          layout:"usuarios",
           mensaje :"Contacto Creado: " + mensaje['data']
 
       });
@@ -94,7 +93,7 @@ const agregaUsuario = (req, res) => {
 const vistaActualizaUsuario = (req, res) => {
 
   res.render("put",{ 
-      layout:"main",     
+      layout:"usuarios",     
   });
 
 }
@@ -122,7 +121,7 @@ const vistaActualizaUsuario = (req, res) => {
       const mensaje = response;
       console.log(usuario['data']);
       res.render("put",{ 
-          layout:"main",
+          layout:"usuarios",
           mensaje :"Contacto actualizado " + mensaje['data']
       });
 
@@ -140,7 +139,7 @@ const vistaActualizaUsuario = (req, res) => {
 const vistaDeleteUsuario = (req, res) => {
 
   res.render("delete",{ 
-      layout:"main",     
+      layout:"usuarios",     
   });
 
 }
@@ -153,7 +152,7 @@ const vistaDeleteUsuario = (req, res) => {
 
       const mensaje = response;
       res.render("delete",{ 
-          layout:"main",
+          layout:"usuarios",
           mensaje :"Contacto eliminado " + mensaje['data']
       });
 
