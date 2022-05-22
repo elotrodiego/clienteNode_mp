@@ -1,8 +1,14 @@
 const axios = require('axios')
 ;
+const { format } = require('express/lib/response');
 const { debug } = require('request');
 
 const urlBase = "http://localhost:9090/producto"
+
+
+function formatMoney(number) {
+    return number.toLocaleString('en-US', { style: 'currency', currency: 'USD' });
+  }
 
 ///////////////// GET /////////////////////
 
@@ -12,7 +18,6 @@ const producto = (req, res) => {
         // handle success
         console.log("ok");
         const producto = response;
-
         res.render("productos/get",{
             layout:"productos",
             producto:producto['data']
@@ -45,7 +50,7 @@ const agregaProducto = (req, res) => {
     let oferta = req.body.oferta;
     let categoria = req.body.categoria;
     let descripcion = req.body.descripcion;
-    axios.post(urlBase, 
+    axios.post(urlBase,
     {
         nombre : nombre,
         codigo : codigo,
@@ -87,7 +92,6 @@ const actualizarProducto = (req, res) => {
     let oferta= req.body.oferta;
     let categoria= req.body.categoria;
     let descripcion= req.body.descripcion;
-
     axios.put(urlBase, {
         id : id,
         nombre : nombre,
@@ -100,7 +104,7 @@ const actualizarProducto = (req, res) => {
     })
     .then(function (response) {
         const mensaje = response;
-        console.log(usuario['data']);
+        console.log(producto['data']);
         res.render("productos/put", {
             layout:"productos",
             mensaje:"Producto actualizado " + mensaje['data']

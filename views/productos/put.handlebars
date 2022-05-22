@@ -1,19 +1,34 @@
-<h2>Actualiza producto</h2>
-
-<form action="/put" method="post">
-  <input type="text" placeholder="id" name="id" id="id">
-  <input type="text" placeholder="nombre" name="nombre" id="nombre">
-  <input type="number" placeholder="codigo" name="codigo" id="codigo">
-  <input type="number" placeholder="valor" name="valor" id="valor">
-  <input type="text" placeholder="foto" name="foto" id="foto">
-  <input type="number" placeholder="oferta" name="oferta" id="oferta">
-  <input type="number" placeholder="categoria" name="categoria" id="categoria">
-  <input type="text" placeholder="descripcion" name="descripcion" id="descripcion">
-  <br>
-  <button type="submit">Submit</button>
-</form>
- <br>
+<div id="form-post" class="col-md-8 order-md-1">
+  <h2>EDITAR</h2>
+  <hr>
+  <form action="/productos/put" method="post">
+  <!--ID-->
+  <label for="id">ID</label>
+  <input type="number" id="id" name="id" placeholder="" class="form-control" required>
+  <!--NOMBRE-->
+  <label for="nombre">Nombre</label>
+  <input type="text" id="nombre" name="nombre" placeholder="" class="form-control" required>
+  <!--CODIGO-->
+  <label for="codigo">Código</label>
+  <input type="number" id="codigo" name="codigo" placeholder="" class="form-control" required>
+  <!--VALOR-->
+  <label for="valor">Valor</label>
+  <input type="number" id="valor" name="valor" placeholder="" class="form-control" required>
+  <!--FOTO-->
+  <label for="foto">URL Foto</label>
+  <input type="text" id="foto" name="foto" placeholder="" class="form-control" required>
+  <!--OFERTA-->
+  <label for="oferta">% Oferta</label>
+  <input type="number" id="oferta" name="oferta" placeholder="" class="form-control" required>
+  <!--CATEGORIA-->
+  <label for="categoria">Categoria</label>
+  <input type="number" id="categoria" name="categoria" placeholder="" class="form-control" required>
+  <!--DESC-->
+  <label for="descripcion">Descripción</label>
+  <textarea class="form-control" id="descripcion" name="descripcion" placeholder="" rows="5" required></textarea>
+  <hr>
+  <button class="btn btn-lg btn-primary btn-block" id="btnvalida" type="submit">Editar</button>
+  </form>
   <br>
   {{mensaje}}
-  <br>
-  <br>
+</div>

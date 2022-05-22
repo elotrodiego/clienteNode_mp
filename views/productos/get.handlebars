@@ -1,10 +1,38 @@
-<h2>Listado de Productos </h2>
-{{#if producto}}
-  <ul>
-    {{#each producto}}
-      <li>{{this.id}} | {{this.nombre}} {{this.codigo}} | (${{this.valor}})
-        <img class="img-fluid" src={{ this.foto }} alt="gc2">
-      </li>
-    {{/each}}
-  </ul>
-{{/if}}
+<div class="container py-5">
+    <div class="row text-center text-white mb-5">
+        <div class="col-lg-7 mx-auto">
+            <h2 class="display-4">Listado</h2>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-lg-8 mx-auto">
+            <!-- List group-->
+            <ul class="list-group shadow">
+                <!-- list group item-->
+                {{#each producto}}
+                <li class="list-group-item">
+                    <!-- Custom content-->
+                    
+                    <div class="media align-items-lg-center flex-column flex-lg-row p-3">
+                        <div class="media-body order-2 order-lg-1">
+                            <h5 class="mt-0 font-weight-bold mb-2">[ID:{{this.id}}] {{this.nombre}}</h5>
+                            <p class="font-italic text-muted mb-0 small">{{this.descripcion}}</p>
+                            <div class="d-flex align-items-center justify-content-between mt-1">
+                                <h6 class="font-weight-bold my-2">${{this.valor}}</h6>
+                                <ul class="list-inline small">
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star text-success"></i></li>
+                                    <li class="list-inline-item m-0"><i class="fa fa-star-o text-gray"></i></li>
+                                </ul>
+                            </div>
+                        </div><img src={{this.foto}} alt="Generic placeholder image" width="200" class="ml-lg-5 order-1 order-lg-2">
+                    </div> <!-- End -->
+                    
+                </li> <!-- End -->
+                {{/each}}
+            </ul> <!-- End -->
+        </div>
+    </div>
+</div>

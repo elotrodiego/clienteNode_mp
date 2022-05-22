@@ -1,0 +1,42 @@
+#form-post {
+    width: 800px;
+    margin: 0 auto;
+}
+
+.navbar-brand {
+    margin-right: 4%;
+}
+
+.navbar-options {
+    margin-left: 4%;
+}
+
+.navbar {
+    background-color:#12122B;
+    font-family: 'Noto Sans JP', sans-serif;
+    font-size: 15px;
+    color: #b8b6b4;
+    text-transform: uppercase;
+}
+
+body {
+    min-height: 100vh
+}
+
+.text-gray {
+    color: #aaa
+}
+
+img {
+    height: 170px;width: 140px
+}
+
+.media {
+    display:flex;
+}
+
+.list-group-item {
+    position: relative;
+    display: block;
+    border: 1px solid black;
+}

@@ -1,6 +1,7 @@
 const express = require("express");
 const request = require("request");
 const exphbs = require("express-handlebars");
+const path = require('path');
 const app = express();
 
 const rutas = require('./routes/rutas.js');
@@ -9,7 +10,7 @@ var hbs = exphbs.create({defaultLayout: 'main'});
 app.engine("handlebars", hbs.engine);
 app.set("view engine","handlebars");
 
-
+app.use(express.static(path.join(__dirname, 'public')));
 app.use(express.urlencoded({
     extended: true
   }))

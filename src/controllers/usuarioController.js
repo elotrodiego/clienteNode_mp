@@ -13,10 +13,10 @@ const usuario = (req, res) => {
     axios.get(urlBase)
     .then(function (response) {
       // handle success
-      console.log("ok");
+      
       const usuario = response;
      
-      res.render("get",{ 
+      res.render("usuarios/get",{ 
           layout:"usuarios",
           usuario:usuario['data']
       });
@@ -39,7 +39,7 @@ const usuario = (req, res) => {
 
   const vistaAgregaUsuario = (req, res) => {
 
-    res.render("post",{ 
+    res.render("usuarios/post",{ 
         layout:"usuarios",     
     });
 
@@ -52,9 +52,8 @@ const agregaUsuario = (req, res) => {
     let nombre= req.body.nombre
     let apellido= req.body.apellido;
     let rut= req.body.rut;
-    let tipoPermiso= req.body.tipoPermiso;
+    let tipo_permiso= req.body.tipo_permiso;
     let contrasena= req.body.contrasena;
-
 
     axios.post(urlBase,
         {
@@ -63,14 +62,14 @@ const agregaUsuario = (req, res) => {
             rut : rut,
             email : email,
             contrasena : contrasena,
-            tipoPermiso : tipoPermiso
+            tipoPermiso : tipo_permiso
         }
         )
     .then(function (response) {
 
       const mensaje = response;
       console.log(usuario['data']);
-      res.render("post",{ 
+      res.render("usuarios/post",{ 
           layout:"usuarios",
           mensaje :"Contacto Creado: " + mensaje['data']
 
@@ -92,7 +91,7 @@ const agregaUsuario = (req, res) => {
 
 const vistaActualizaUsuario = (req, res) => {
 
-  res.render("put",{ 
+  res.render("usuarios/put",{ 
       layout:"usuarios",     
   });
 
@@ -105,40 +104,37 @@ const vistaActualizaUsuario = (req, res) => {
     let rut= req.body.rut;
     let tipo_permiso= req.body.tipo_permiso;
     let id= req.body.id;
-
+    let contrasena= req.body.contrasena;
     axios.put(urlBase,
         {
-          idUsuario : id,
+          idUser : id,
           email :email,
           nombre : nombre,
           apellido : apellido,
+          contrasena : contrasena,
           rut : rut,
-          tipo_permiso : tipo_permiso
-        }
-        )
+          tipoPermiso : tipo_permiso
+        })
     .then(function (response) {
 
       const mensaje = response;
       console.log(usuario['data']);
-      res.render("put",{ 
+      res.render("usuarios/put",{ 
           layout:"usuarios",
           mensaje :"Contacto actualizado " + mensaje['data']
       });
-
     })
     .catch(function (error) {
       // handle error
       console.log(error);
     });    
-
-  
   }
 
 ////////////////// DELETE ////////////////////////////////////////////
 
 const vistaDeleteUsuario = (req, res) => {
 
-  res.render("delete",{ 
+  res.render("usuarios/delete",{ 
       layout:"usuarios",     
   });
 
@@ -151,7 +147,7 @@ const vistaDeleteUsuario = (req, res) => {
     .then(function (response) {
 
       const mensaje = response;
-      res.render("delete",{ 
+      res.render("usuarios/delete",{ 
           layout:"usuarios",
           mensaje :"Contacto eliminado " + mensaje['data']
       });
