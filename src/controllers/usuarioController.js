@@ -2,7 +2,7 @@ const axios = require('axios')
 
 ;
 //const request = require("request");
-const urlBase = "http://127.0.0.1:9090/usuario"
+const urlBase = "us-cdbr-east-05.cleardb.net/usuario"
 
 
 ////////////////// GET ////////////////////////////////////////////

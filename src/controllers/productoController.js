@@ -3,7 +3,7 @@ const axios = require('axios')
 const { format } = require('express/lib/response');
 const { debug } = require('request');
 
-const urlBase = "http://localhost:9090/producto"
+const urlBase = "us-cdbr-east-05.cleardb.net/producto"
 
 
 function formatMoney(number) {

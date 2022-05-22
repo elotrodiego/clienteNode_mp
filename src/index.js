@@ -23,8 +23,8 @@ app.use((req, res) => {
     res.status(404).send("Página no encontrada");
 });
 
-const port = 3000
-
-app.listen(port, () => {
-    console.log(`Listening on port ${port}`)
-  });
+//const port = 3000
+app.set('port', process.env.PORT || 3000);
+app.listen(app.get('port'), () => {
+    console.log(`Listening on port `, app.get('port'))
+});
